@@ -14,46 +14,23 @@ Access to a server to install and configure Apache Web Server
 
 Example Environment:
 
-Qlik Sense: QlikServer1.domain.local - IP: 172.16.16.100
-Apache Web Server: QlikServer3.domain.local - IP: 172.16.16.102
-Other Active Servers: AD FS: DC1.domain.local
-Qlik Sense February 2018 GA
-Windows 2016
-ADFS 4.0
-Apache 2.4 (httpd-2.4.33-o110h-x64-vc14-r2)
-HTTPS / SSL - SHA256 with "Microsoft Enhanced RSA and AES Cryptographic Provider" added Enabled / Active on Sense, ADFS and Apache.
+- Qlik Sense: QlikServer1.domain.local - IP: 172.16.16.100
+- Apache Web Server: QlikServer3.domain.local - IP: 172.16.16.102
+- Other Active Servers: AD FS: DC1.domain.local
+- Qlik Sense February 2018 GA
+- Windows 2016
+- ADFS 4.0
+- Apache 2.4 (httpd-2.4.33-o110h-x64-vc14-r2)
+- HTTPS / SSL - SHA256 with "Microsoft Enhanced RSA and AES Cryptographic Provider" added Enabled / Active on Sense, ADFS and Apache.
+
 Note: This documentation is only to used to validate and test while using Apache as a Reverse Web Server and Load Balancer with HTTPS/SSL is enabled. This example is under the assumption there's an understanding of the environment and having the proper permissions to perform the actions shown. Accounts used are all Local Administrators and the servers are open, with nothing blocked and no other programs installed on them. Any other versions or configurations of any software may need other steps/options/settings/etc ... that are not documented here. ​Use this at your own discretion as Qlik does NOT support Apache/OpenSSL/ADFS in their installation/configuration or use.
 
-
-# QlikSenseApacheLockdown
-# Virtual Hosts
-#
-# Required modules: mod_log_config
-# If you want to maintain multiple domains/hostnames on your
-# machine you can setup VirtualHost containers for them. Most configurations
-# use only name-based virtual hosts so the server doesn't need to worry about
-# IP addresses. This is indicated by the asterisks in the directives below.
-#
-# Please see the documentation at
-# <URL:http://httpd.apache.org/docs/2.4/vhosts/>
-# for further details before you try to setup virtual hosts.
-#
-# You may use the command line option '-S' to verify your virtual host
-# configuration.
-#
-# Qlik Sense Reverse Proxy configuration for header authentication
-#
-# Qlik Sense test Header configuration:
-# - Create a new Virtual Proxy with Header authentication using a Static User Directory. EX: QVUSER as the Header name
-# - Add the Reverse Proxy FQDN/Server Name and IP address to whitelist of virtual proxy
-#
-
-Put the IP Address OR FQDN/Server Name of the Qlik Sense Server as SENSE_SERVER_1 and SENSE_SERVER_2. EX: qlikserver1.domain.local
-Put the IP Address OR FQDN/Server Name of the Reverse Proxy as LOCAL_ADDR. EX: 172.16.16.102
-Put the FQDN/Server Name of the Reverse Proxy as APACHE_SERVER. EX: qlikserver3.domain.local
-Put the FQDN/Server Name/URL of the Identity Provider (IdP) as IDP_ADDR. EX: dc1.domain.local
-Put the Virtual Proxy prefix as VIRTUAL_PROXY - EX: header
-Put the desired name for the Balancer confiuration as BALANCER_NAME -EX: balancer
+- Put the IP Address OR FQDN/Server Name of the Qlik Sense Server as SENSE_SERVER_1 and SENSE_SERVER_2. EX: qlikserver1.domain.local
+- Put the IP Address OR FQDN/Server Name of the Reverse Proxy as LOCAL_ADDR. EX: 172.16.16.102
+- Put the FQDN/Server Name of the Reverse Proxy as APACHE_SERVER. EX: qlikserver3.domain.local
+- Put the FQDN/Server Name/URL of the Identity Provider (IdP) as IDP_ADDR. EX: dc1.domain.local
+- Put the Virtual Proxy prefix as VIRTUAL_PROXY - EX: header
+- Put the desired name for the Balancer confiuration as BALANCER_NAME -EX: balancer
 
 
 Define SENSE_SERVER_1 qlikserver1.domain.local
