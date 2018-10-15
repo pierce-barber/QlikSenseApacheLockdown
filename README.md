@@ -36,7 +36,7 @@ http-vhosts.conf
 	- Put the FQDN/Server Name of the Reverse Proxy as APACHE_SERVER. EX: qlikserver3.domain.local
 	- Put the FQDN/Server Name/URL of the Identity Provider (IdP) as IDP_ADDR. EX: dc1.domain.local
 	- Put the Virtual Proxy prefix as VIRTUAL_PROXY - EX: header
-	- Put the desired name for the Balancer confiuration as BALANCER_NAME -EX: balancer
+	- Put the desired name for the Balancer confiuration as BALANCER_NAME - EX: balancer
 
 	- Define SENSE_SERVER_1 qlikserver1.domain.local
 	- Define SENSE_SERVER_2 qlikserver2.domain.local
@@ -68,7 +68,7 @@ http-vhosts.conf
 	# 	Forces browser to switch to HTTPS for all requests to this site
     Header set Strict-Transport-Security "max-age=16070400; includeSubDomains"
 	
-	# 	Block HTTP/1.0 Protocal
+	# 	Block HTTP/1.0 Protocol
     RewriteCond %{SERVER_PROTOCOL} ^HTTP/1\.0$
     RewriteRule ^.* - [F]
 	
