@@ -79,6 +79,7 @@ http-vhosts.conf
 	#	Add HTTPOnly and Secure to all Response Cookies through the Reverse Proxy.
 	#	Note: They may work as is, but they may need to be modified
 	#	Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
+	#	Example of seperating out the flags as it might work better than the above format in some situations
 	#	Header edit Set-Cookie ^(.*?)(;\s?HttpOnly|$)(.*)$ "$1; HttpOnly$3"
 	#	Header edit Set-Cookie ^(.*?)(;\s?Secure|$)(.*)$ "$1; Secure$3"
     
