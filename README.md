@@ -6,7 +6,7 @@ Prerequisites:
 
 - Valid 3rd Party SSL certificates will be trusted by the Apache Web Server/Qlik Sense Server (Other: ADFS server) and are configured 
   - Note: Tested with all the certificates being created by the same Certificate Authority (CA - Tinycert.org) accompanied by the same Trusted Root across all servers.
-  - Note 2: Tested Qlik Sense with a valid SSL certificate bound to the Proxy Service - How to: Change the certificate used by the Qlik Sense Proxy to a custom third party certificate (https://qliksupport.force.com/articles/000005458) / https://help.qlik.com/en-US/sense/April2018/Subsystems/ManagementConsole/Content/change-proxy-certificate.htm
+  - Note 2: Tested Qlik Sense with a valid SSL certificate bound to the Proxy Service - How to: Change the certificate used by the Qlik Sense Proxy to a custom third party certificate (https://qliksupport.force.com/articles/000005458) / https://community.qlik.com/t5/Knowledge/How-to-change-the-certificate-used-by-the-Qlik-Sense-Proxy-to-a/ta-p/1712773
   - Note 3: Tested using SHA256 certificates for SAML and verify that all certificates are configured correctly with the proper Cryptographic Providers - Error 500 - Internal server error in the Hub/QMC when connecting through SAML authentication (https://qliksupport.force.com/articles/000041680)
   - Note 4: For HTTPS/SSL for Apache needs the certificate to be split into two files (.crt and .key) - Same process is used for NPrinting and is described in the article: How to convert a certificate for NPrinting to the .key and .crt files for HTTPS/SSL in the Web Console and/or the NewsStand (https://qliksupport.force.com/articles/000043517)
 
